@@ -39,5 +39,9 @@ public class Clavier {
 		} while (!(entreeCorrecte && chiffre > 0));
 		return chiffre;
 	}
-
+	public static String entrerTexte(String question) {
+		System.out.println(question);
+		String texte = scan.next();
+		return texte;
+	}
 }
