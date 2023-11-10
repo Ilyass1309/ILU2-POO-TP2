@@ -22,7 +22,7 @@ public class ControlAcheterProduit {
 		return gauloisProd;
 	}
 	
-	public int assezEnStock(Gaulois vendeur, int nbProd) {
+	public int assezEnStock(Gaulois vendeur) {
 		Etal etal = village.rechercherEtal(vendeur);
 		return etal.getQuantite();
 	}
@@ -30,5 +30,8 @@ public class ControlAcheterProduit {
 	public void retirerQuantite(Gaulois vendeur, int quantite) {
 		Etal etal = village.rechercherEtal(vendeur);
 		etal.acheterProduit(quantite);
+		if (etal.getQuantite() == 0) {
+			etal.libererEtal();
+		}
 	}
 }
